@@ -1,0 +1,14 @@
+{{ content | default: '' }}
+
+{% assign posts = site.posts | sort: 'date' | reverse %}
+
+<div class="welcome">Welcome to my blog! These are my thoughts on <strong>.NET, C#, architecture,</strong> and software development.</div>
+
+<div class="posts-grid">
+  {% for post in posts limit: 10 %}
+    <article class="post-card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+    </article>
+  {% endfor %}
+</div>

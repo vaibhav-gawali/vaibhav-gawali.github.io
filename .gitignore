@@ -234,3 +234,29 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# ----------------------------
+# Jekyll (Ruby) build artifacts
+# ----------------------------
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler caches
+.bundle/
+vendor/bundle/
+vendor/cache/
+vendor/ruby/
+
+# ----------------------------
+# .NET (SDK) common artifacts
+# ----------------------------
+TestResults/
+*.csproj.user
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.nuget/
+.dotnet/
+artifacts/

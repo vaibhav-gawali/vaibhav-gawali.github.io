@@ -1,0 +1,23 @@
+# Sidebar social icons.
+# Chirpy renders these from `site.data.contact`.
+
+- type: linkedin
+  icon: "fab fa-linkedin-in"
+  url: "https://www.linkedin.com/in/vaibhavgawali"
+
+- type: x
+  icon: "fab fa-x-twitter"
+  url: "https://x.com/vaibhav_gawali"
+
+- type: facebook
+  icon: "fab fa-facebook-f"
+  url: "https://www.facebook.com/vaibhav.gawali"
+
+- type: email
+  icon: "fas fa-envelope"
+  url: "mailto:vaibhav@vaibhavgawali.net"
+  noblank: true
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true

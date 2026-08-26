@@ -1,0 +1,66 @@
+title: "Vaibhav Gawali"
+description: "Hardcore .NET Professional - Blog about .NET, C#, architecture, and software development"
+author: "Vaibhav Gawali"
+email: "vaibhav.gawali@gmail.com"
+url: "https://vaibhavgawali.in"
+baseurl: ""
+
+remote_theme: "cotes2020/jekyll-theme-chirpy"
+
+markdown: kramdown
+highlighter: rouge
+timezone: UTC
+
+permalink: /post/:slug/
+
+# Use Chirpy layouts for everything
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+paginate: 10
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-include-cache
+
+# Chirpy sidebar renders navigation from the "tabs" collection.
+# Your _tabs/ folder must be registered as a Jekyll collection.
+collections:
+  tabs:
+    output: true
+
+# Chirpy uses /tags/:name/ and /categories/:name/ routes.
+# jekyll-archives needs explicit configuration for tag archives.
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+exclude:
+  - .venv/
+  - .vs/
+  - vendor/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
