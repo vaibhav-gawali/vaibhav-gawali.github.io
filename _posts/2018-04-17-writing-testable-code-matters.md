@@ -10,6 +10,9 @@ tags:
   - "dotnet"
   - "testing"
   - "unittesting"
+redirect_from:
+  - "/writing-testable-code-matters/"
+  - "/writing-testable-code-matters"
 ---
 
 Do you tell your client “I cannot write testable code; writing testable code is not in my genes. My code is crap and it can only be tested with hard manual efforts; my code sucks and I am not a professional”. Do you think customers will come to you for the services you offer?

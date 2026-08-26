@@ -8,6 +8,9 @@ tags:
   - "net"
   - "csharp"
   - "dotnet"
+redirect_from:
+  - "/excellent-csharp-dotnet-developer-skills/"
+  - "/excellent-csharp-dotnet-developer-skills"
 ---
 
 In my opinion here are some skills of an excellent C# .NET developer, I suggest to grow and strive for excellence to become one of the such developer.

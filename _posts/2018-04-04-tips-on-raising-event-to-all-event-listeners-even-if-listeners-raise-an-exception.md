@@ -10,6 +10,9 @@ tags:
   - "delegates"
   - "dotnet"
   - "events"
+redirect_from:
+  - "/tips-on-raising-event-to-all-event-listeners-even-if-listeners-raise-an-exception/"
+  - "/tips-on-raising-event-to-all-event-listeners-even-if-listeners-raise-an-exception"
 ---
 
 By default with default event raising mechanism of C# generated code, CLR aborts raising events to other subscribers when an exception is raised by one of the subscriber. And sometimes it is necessary to raise event to all event listeners even when some of the event subscribers fails by raising an exception.

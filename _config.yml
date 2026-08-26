@@ -36,6 +36,7 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # Chirpy sidebar renders navigation from the "tabs" collection.
 # Your _tabs/ folder must be registered as a Jekyll collection.

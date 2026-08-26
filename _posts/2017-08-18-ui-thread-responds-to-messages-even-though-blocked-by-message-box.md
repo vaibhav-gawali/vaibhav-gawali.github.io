@@ -9,6 +9,9 @@ tags:
   - "ui"
   - "winform"
   - "wpf"
+redirect_from:
+  - "/ui-thread-responds-to-messages-even-though-blocked-by-message-box/"
+  - "/ui-thread-responds-to-messages-even-though-blocked-by-message-box"
 ---
 
 My observation is that many times developer assume that when a message box is getting displayed then UI thread is just blocked. And UI thread cannot do anything else.

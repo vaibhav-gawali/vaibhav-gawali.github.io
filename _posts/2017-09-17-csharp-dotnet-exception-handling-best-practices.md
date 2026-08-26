@@ -9,6 +9,9 @@ tags:
   - "csharp"
   - "dotnet"
   - "exception"
+redirect_from:
+  - "/csharp-dotnet-exception-handling-best-practices/"
+  - "/csharp-dotnet-exception-handling-best-practices"
 ---
 
 Excellent exception handling is must for any app for excellent user experience and it is an essential trait of an [excellent C# developer](https://vaibhavgawali.net/excellent-csharp-dotnet-developer-skills/).

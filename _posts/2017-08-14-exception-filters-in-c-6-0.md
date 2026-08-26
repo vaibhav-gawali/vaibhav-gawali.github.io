@@ -6,6 +6,9 @@ categories:
 tags: 
   - "csharp"
   - "dotnet"
+redirect_from:
+  - "/exception-filters-in-c-6-0/"
+  - "/exception-filters-in-c-6-0"
 ---
 
 Learn how to use exception filtering technique introduced in C# 6.0.

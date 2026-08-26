@@ -6,6 +6,9 @@ categories:
 tags: 
   - "csharp"
   - "dotnet"
+redirect_from:
+  - "/string-interpolation-in-csharp6/"
+  - "/string-interpolation-in-csharp6"
 ---
 
 Published my first video - #Interpolated #Strings in C# 6.0 on YouTube.

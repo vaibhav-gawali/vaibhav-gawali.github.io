@@ -9,6 +9,9 @@ tags:
   - "c"
   - "csharp"
   - "performance"
+redirect_from:
+  - "/avoid-boxing-unboxing-improve-performance/"
+  - "/avoid-boxing-unboxing-improve-performance"
 ---
 
 While writing code we generally don’t pay much attention to [boxing & unboxing](https://msdn.microsoft.com/en-us/library/yz2be5wk.aspx). It does matter in performance. And a [highly skilled and experienced C# / .NET developer](https://vaibhavgawali.net/excellent-csharp-dotnet-developer-skills/) must pay attention to everything that can improve performance.

@@ -7,6 +7,9 @@ categories:
 tags: 
   - "testing"
   - "unit-testing"
+redirect_from:
+  - "/are-you-doing-effective-testing/"
+  - "/are-you-doing-effective-testing"
 ---
 
 Have you ever faced a challenge of timely delivery with well tested software? Welcome, join the club, you are not alone out there who is facing this challenge.

@@ -8,6 +8,9 @@ tags:
   - "concurrent"
   - "dotnet"
   - "parallel"
+redirect_from:
+  - "/quick-comparison-of-concurrent-code-execution-techniques-in-net-desktop-applications/"
+  - "/quick-comparison-of-concurrent-code-execution-techniques-in-net-desktop-applications"
 ---
 
 In .NET desktop applications there are many ways to execute code concurrently (or in parallel) on a different thread. And there are times when a [skilled C# .NET developer](https://vaibhavgawali.net/excellent-csharp-dotnet-developer-skills/) needs to write code that will execute in parallel for some reason. In this post I have tried to compile possible ways that I could find to achieve concurrent code execution in .NET desktop applications.

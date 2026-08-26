@@ -9,6 +9,9 @@ tags:
   - "codereview"
   - "dotnet"
   - "review"
+redirect_from:
+  - "/observations-from-code-reviews-and-why-they-are-important/"
+  - "/observations-from-code-reviews-and-why-they-are-important"
 ---
 
 I work on a C# and .NET based technology and I would like to share my experience on why code review is an important activity in the project.

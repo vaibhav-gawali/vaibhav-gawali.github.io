@@ -10,6 +10,9 @@ tags:
   - "csharp"
   - "dotnet"
   - "performance"
+redirect_from:
+  - "/effectively-use-stringbuilder-to-gain-performance/"
+  - "/effectively-use-stringbuilder-to-gain-performance"
 ---
 
 High performance of application is implicit requirement, no one states it, and however it’s there and supposed to be taken care of. Here is my first blog on StringBuilder that hopefully help you to sharpen your skills and become an [excellent C# developer](https://vaibhavgawali.net/excellent-csharp-dotnet-developer-skills/). (This is written after so many [observations from code reviews](https://vaibhavgawali.net/observations-from-code-reviews-and-why-they-are-important/)) and from my personal experiences.

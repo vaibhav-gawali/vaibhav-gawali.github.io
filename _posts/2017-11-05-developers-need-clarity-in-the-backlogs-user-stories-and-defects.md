@@ -7,6 +7,9 @@ tags:
   - "backlogs"
   - "requirements"
   - "user-stories"
+redirect_from:
+  - "/developers-need-clarity-in-the-backlogs-user-stories-and-defects/"
+  - "/developers-need-clarity-in-the-backlogs-user-stories-and-defects"
 ---
 
 Often times we come across poorly written backlogs and defects. This not only leads to confusion but also creates rework in the sense that spending time to understand what is happening to the system and what are the expectations from developer or tester.

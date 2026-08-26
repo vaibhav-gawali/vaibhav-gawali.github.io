@@ -2,6 +2,9 @@
 title: "Blog Post Title"
 date: 2017-07-16
 coverImage: "gallery-6.jpg"
+redirect_from:
+  - "/hello-world/"
+  - "/hello-world"
 ---
 
 What goes into a blog post? Helpful, industry-specific content that: 1) gives readers a useful takeaway, and 2) shows you're an industry expert.

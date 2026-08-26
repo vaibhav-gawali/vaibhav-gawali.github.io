@@ -13,6 +13,9 @@ tags:
   - "internationalization"
   - "loalization"
 coverImage: "Globalization-Internationalization-Localization.png"
+redirect_from:
+  - "/localization-globalization-and-internalization-in-net-for-windows-desktop-applications/"
+  - "/localization-globalization-and-internalization-in-net-for-windows-desktop-applications"
 ---
 
 Globalization of software cannot be a afterthought, [an expert C# developer](https://vaibhavgawali.net/excellent-csharp-dotnet-developer-skills/) will always pay attention to globalization. Globalization of the .NET applications is made very easy by Microsoft's .NET team. This covers following things –

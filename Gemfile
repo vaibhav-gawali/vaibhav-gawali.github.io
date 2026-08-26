@@ -11,6 +11,8 @@ gem "jekyll-paginate"
 gem "jekyll-archives"
 gem "jekyll-include-cache"
 
+gem "jekyll-redirect-from"
+
 gem "jekyll-remote-theme"
 
 # Ensure Chirpy theme assets (including assets/js/dist/*) are present.

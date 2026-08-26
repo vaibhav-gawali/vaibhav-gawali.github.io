@@ -4,6 +4,9 @@ date: 2017-08-15
 tags: 
   - "challenges"
   - "estimation"
+redirect_from:
+  - "/estimation-challenges-gotchas-and-expectations-from-developer/"
+  - "/estimation-challenges-gotchas-and-expectations-from-developer"
 ---
 
 ## [What is an estimate](https://en.wikipedia.org/wiki/Estimation)? (From Wikipedia)
