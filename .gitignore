@@ -242,6 +242,21 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+# Temporary build outputs used for local testing.
+_site_test_verify/
+
+# ----------------------------
+# Temporary directories (case-insensitive)
+# ----------------------------
+[Tt][Mm][Pp]/
+[tT][mM][pP]/
+[Tt][mM][pP]/
+[tT][Mm][pP]/
+[Tt][Mm][Pp]/
+[tT][mM][Pp]/
+[Tt][mM][Pp]/
+[tT][Mm][Pp]/
+
 # Bundler caches
 .bundle/
 vendor/bundle/

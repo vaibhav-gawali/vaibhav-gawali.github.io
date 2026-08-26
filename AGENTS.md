@@ -75,6 +75,12 @@ If you run into a blank home middle / missing post list:
 - If you place raw URLs, Markdown rendering may not convert them into links reliably.
 - Prefer explicit Markdown links or HTML `<a>` elements.
 
+## Temporary files / output locations
+
+- All temporary build/test artifacts MUST be generated under `.tmp/` at the repository root.
+- Do not generate temporary outputs in the repo root or commit them.
+- Example usage: build into `.tmp/<your-folder>/` and serve from there.
+
 ## Pull request / change expectations
 
 - Keep changes minimal and focused on the requested pages/posts/tabs.

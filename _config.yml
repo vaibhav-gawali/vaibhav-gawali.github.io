@@ -2,7 +2,9 @@ title: "Vaibhav Gawali"
 description: "Hardcore .NET Professional - Blog about .NET, C#, architecture, and software development"
 author: "Vaibhav Gawali"
 email: "vaibhav.gawali@gmail.com"
-url: "https://vaibhavgawali.in"
+# Keep redirects relative so they work in local preview and across
+# future custom domains (GitHub Pages, staging, etc.).
+url: ""
 baseurl: ""
 
 remote_theme: "cotes2020/jekyll-theme-chirpy"
