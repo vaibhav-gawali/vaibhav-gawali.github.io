@@ -9,6 +9,12 @@
       So we must percent-encode it (C# -> C%23) in the query params.
     {%- endcomment -%}
     {% assign title = title | url_encode %}
+    {%- comment -%}
+      Liquid's url_encode does not reliably encode '#'.
+      For Twitter/X intent URLs, an unencoded '#' breaks the query
+      parameter because the browser treats it as the URL fragment.
+    {%- endcomment -%}
+    {% assign title = title | replace: '#', '%23' %}
     {% assign url = page.url | absolute_url | url_encode %}
 
     {% for share in site.data.share.platforms -%}
