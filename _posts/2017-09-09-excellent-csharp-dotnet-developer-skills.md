@@ -51,7 +51,7 @@ Consider below sample API and find out how many test cases one must cover as par
 
 ```csharp
 public int Add(string num1String, string num2String);
-```csharp
+```
 
 [Refer complete sample code here](#SampleCode)
 
