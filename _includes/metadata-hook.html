@@ -1,0 +1,38 @@
+<!-- Mermaid rendering hook for Chirpy (client-side). -->
+
+{% if page.mermaid %}
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!window.mermaid) return;
+
+    // Convert ```mermaid blocks (rendered as code.language-mermaid)
+    // into <pre class="mermaid"> that Mermaid can render.
+    document.querySelectorAll('code.language-mermaid').forEach((codeEl) => {
+      const text = codeEl.textContent || '';
+      const preEl = codeEl.closest('pre');
+      if (preEl) preEl.classList.add('d-none');
+
+      const mermaidPre = document.createElement('pre');
+      mermaidPre.className = 'mermaid';
+      mermaidPre.textContent = text;
+
+      if (preEl && preEl.parentNode) preEl.parentNode.insertBefore(mermaidPre, preEl.nextSibling);
+      else codeEl.parentNode.appendChild(mermaidPre);
+    });
+
+    try {
+      mermaid.initialize({ startOnLoad: false });
+      if (typeof mermaid.run === 'function') {
+        mermaid.run({ querySelector: 'pre.mermaid' });
+      } else if (typeof mermaid.init === 'function') {
+        mermaid.init(undefined, 'pre.mermaid');
+      }
+    } catch (e) {
+      // Fail silently so the post still renders.
+      // eslint-disable-next-line no-console
+      console.error('Mermaid rendering failed:', e);
+    }
+  });
+</script>
+{% endif %}

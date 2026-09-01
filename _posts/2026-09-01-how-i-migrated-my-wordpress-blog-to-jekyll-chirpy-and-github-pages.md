@@ -10,6 +10,7 @@ tags:
   - "chirpy"
   - "github-pages"
 description: "How I used Hermes AI Agent and GitHub CLI on WSL2 to migrate my WordPress blog to Jekyll Chirpy and GitHub Pages, with only two manual setup steps."
+mermaid: true
 ---
 
 I migrated my database-backed WordPress blog to a Markdown-based Jekyll site hosted on GitHub Pages, with most of the work performed by Hermes AI Agent on WSL2.
@@ -115,6 +116,46 @@ Before converting content, Hermes reviewed the exported content and migration re
 Migrating HTML is only one part of moving a blog.
 
 The harder parts are URLs, metadata, images, and the paths readers (and search engines) already use.
+
+### Migration workflow
+
+```mermaid
+flowchart TD
+  subgraph Manual["Manual prerequisites"]
+    A["Export WordPress blog as XML"]
+    B["Install Jekyll on WSL2"]
+  end
+
+  subgraph Assisted["Hermes-assisted migration on WSL2"]
+    C["Set up Hermes AI Agent"]
+    D["Access and review repository using GitHub CLI"]
+    E["Inventory the exported WordPress content"]
+    F["Configure Jekyll Chirpy"]
+    G["Convert content and create front matter"]
+    H["Migrate media, metadata, and URLs"]
+    I["Build the local staging website"]
+    J["Perform basic migration verification"]
+  end
+
+  subgraph Review["Review and deployment"]
+    K["Visually review the local staging website"]
+    L["Prepare GitHub Pages deployment"]
+    M["Build and deploy using GitHub Actions"]
+  end
+
+  A --> C
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  G --> H
+  H --> I
+  I --> J
+  J --> K
+  K --> L
+  L --> M
+```
 
 ## 4. Exporting Content From WordPress
 
