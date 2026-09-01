@@ -8,6 +8,8 @@ tags:
   - "net"
   - "csharp"
   - "dotnet"
+image:
+  path: "/assets/images/excellent-csharp-dotnet-developer-skills/Master_of_IDE.png"
 redirect_from:
   - "/excellent-csharp-dotnet-developer-skills/"
   - "/excellent-csharp-dotnet-developer-skills"
