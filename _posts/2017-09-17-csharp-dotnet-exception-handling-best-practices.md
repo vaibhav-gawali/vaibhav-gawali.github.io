@@ -88,7 +88,7 @@ This helps to notify user about any uncaught exceptions, and also gives you a ch
 
 ## Code Sample
 
-```
+```csharp
 namespace BestPractices.ExceptionHandling
 {
     class Operation : IDisposable

@@ -25,7 +25,7 @@ Note that below code snippet only focuses on raising events to all of the subscr
 
 Here is the code snippet ([Try running this code on .NET Fiddle](https://dotnetfiddle.net/rNR7m6)):
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;

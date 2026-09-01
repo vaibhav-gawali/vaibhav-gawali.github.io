@@ -26,7 +26,7 @@ To demonstrate this to one of my colleague, I came up with following approach fo
 
 This is also true for a WPF application.
 
-```
+```csharp
 public partial class MultipleMessageBox : Form
     {
         private System.ComponentModel.IContainer components = null;

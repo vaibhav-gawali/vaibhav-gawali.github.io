@@ -49,9 +49,9 @@ And in the busy day (tea/coffee/chitchat/news/gossips/online shopping etc.) one 
 
 Consider below sample API and find out how many test cases one must cover as part of unit testing:
 
-```
+```csharp
 public int Add(string num1String, string num2String);
-```
+```csharp
 
 [Refer complete sample code here](#SampleCode)
 
@@ -227,7 +227,7 @@ Here is my final advice - [Be so good that they can't ignore you](https://vaibha
 
  
 
-```
+```csharp
 namespace Math
 {
     /// <summary>

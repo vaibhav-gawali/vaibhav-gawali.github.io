@@ -25,7 +25,7 @@ This video has been published on YouTube.
 
 <!--more-->
 
-```
+```csharp
 namespace ExceptionFilters
 {
     class Program
