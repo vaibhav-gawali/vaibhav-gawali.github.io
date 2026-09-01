@@ -27,7 +27,7 @@ I have also seen developer’s instantiating StringBuilder in an inefficient way
 
 Example code:
 
-```
+```csharp
 static void Main(string[] args)
 {
     int guessLength = 30;
