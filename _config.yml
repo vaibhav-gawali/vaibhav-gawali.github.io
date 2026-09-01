@@ -4,7 +4,7 @@ author: "Vaibhav Gawali"
 email: "vaibhav.gawali@gmail.com"
 # Keep redirects relative so they work in local preview and across
 # future custom domains (GitHub Pages, staging, etc.).
-url: ""
+url: "https://vaibhav-gawali.github.io"
 baseurl: ""
 
 remote_theme: "cotes2020/jekyll-theme-chirpy"
