@@ -7,6 +7,13 @@ email: "vaibhav.gawali@gmail.com"
 url: "https://vaibhav-gawali.github.io"
 baseurl: ""
 
+# Chirpy uses `site.social.name` and `site.social.links[0]` to render the
+# author name when a post doesn't specify `author:`/`authors:` front matter.
+social:
+  name: "Vaibhav M. Gawali"
+  links:
+    - "https://vaibhav-gawali.github.io"
+
 remote_theme: "cotes2020/jekyll-theme-chirpy"
 
 markdown: kramdown
