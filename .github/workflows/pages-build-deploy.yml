@@ -21,12 +21,17 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true
+          bundler-cache: false
 
       - name: Install OS dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libssl-dev
+
+      - name: Bundle install (no frozen lock)
+        run: |
+          bundle config set frozen false
+          bundle install --jobs 4 --retry 3
 
       - name: Build with Jekyll
         run: |
