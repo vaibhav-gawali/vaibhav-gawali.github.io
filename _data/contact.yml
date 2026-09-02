@@ -15,7 +15,7 @@
 
 - type: email
   icon: "fas fa-envelope"
-  url: "mailto:vaibhav@vaibhavgawali.net"
+  url: "mailto:vaibhav+blog@vaibhavgawali.net"
   noblank: true
 
 - type: rss

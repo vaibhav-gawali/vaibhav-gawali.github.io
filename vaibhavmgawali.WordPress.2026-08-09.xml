@@ -36,7 +36,7 @@
 	<wp:base_blog_url>https://vaibhavgawali.net</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[vaiiibhav]]></wp:author_login><wp:author_email><![CDATA[vaiiibhav@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[vaiiibhav]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[vaibhav.gawali]]></wp:author_login><wp:author_email><![CDATA[vaibhav@vaibhavgawali.net]]></wp:author_email><wp:author_display_name><![CDATA[Vaibhav Gawali]]></wp:author_display_name><wp:author_first_name><![CDATA[Vaibhav]]></wp:author_first_name><wp:author_last_name><![CDATA[Gawali]]></wp:author_last_name></wp:author>
+	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[vaibhav.gawali]]></wp:author_login><wp:author_email><![CDATA[vaibhav+blog@vaibhavgawali.net]]></wp:author_email><wp:author_display_name><![CDATA[Vaibhav Gawali]]></wp:author_display_name><wp:author_first_name><![CDATA[Vaibhav]]></wp:author_first_name><wp:author_last_name><![CDATA[Gawali]]></wp:author_last_name></wp:author>
 
 		<wp:category>
 		<wp:term_id>4</wp:term_id>
