@@ -13,7 +13,7 @@ tags:
   - wsl2
 description: "How I used Hermes AI Agent in YOLO mode on WSL2 to create a GitHub Actions workflow that builds and deploys my Jekyll Chirpy blog to GitHub Pages."
 mermaid: true
-published: false
+published: true
 ---
 
 ## Introduction
