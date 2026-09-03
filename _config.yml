@@ -66,6 +66,10 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
+analytics:
+  google:
+    id: "G-K993GRMFYN"
+
 exclude:
   - .venv/
   - .vs/
