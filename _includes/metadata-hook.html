@@ -96,8 +96,12 @@
 
       const barInner = document.createElement('div');
       barInner.id = 'reading-progress-bar';
-
+      
       bar.appendChild(barInner);
+
+      // Start with full width so we always have a visible bar.
+      // The JS update will clamp it to the correct progress.
+      barInner.style.width = '100%';
       // Put it at the top of the document so it always stays above content.
       document.body.prepend(bar);
 
@@ -120,7 +124,7 @@
       const update = () => {
         const total = endY - startY;
         if (total <= 0) {
-          barInner.style.width = '0%';
+          barInner.style.width = '100%';
           return;
         }
 
