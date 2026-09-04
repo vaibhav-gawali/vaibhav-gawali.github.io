@@ -62,7 +62,9 @@
       display: block;
       transform: none;
       width: 0%;
-      background: var(--link-color, #0056b2);
+      /* Force a visible color regardless of theme variables. */
+      background: #ff3b30 !important;
+      opacity: 1 !important;
       will-change: width;
     }
     
