@@ -53,7 +53,8 @@
       height: 5px;
       z-index: 2147483647;
       pointer-events: none;
-      background: transparent;
+      /* Force a visible color even if JS fails to run. */
+      background: #ff3b30 !important;
     }
     
     #reading-progress-bar {
