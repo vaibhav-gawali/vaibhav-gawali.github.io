@@ -134,10 +134,8 @@
       window.addEventListener('scroll', requestUpdate, { passive: true });
       window.addEventListener('resize', measure);
 
-      if (prefersReducedMotion) {
-        // Do not animate the bar on scroll when the user prefers reduced motion.
-        window.removeEventListener('scroll', requestUpdate);
-      }
+      // Respect reduced-motion preferences via CSS (we disable transitions).
+      // We still update the progress value on scroll so the bar remains functional.
 
       if ('ResizeObserver' in window) {
         const ro = new ResizeObserver(() => {
