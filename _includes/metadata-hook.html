@@ -103,9 +103,12 @@
 
       const measure = () => {
         const rect = content.getBoundingClientRect();
-        const height = rect.height || content.scrollHeight || 0;
-        startY = window.scrollY + rect.top;
-        endY = startY + height;
+        const docTop = window.scrollY + rect.top;
+        const docBottom = window.scrollY + rect.bottom;
+
+        // Ensure we always have sane numbers.
+        startY = Number.isFinite(docTop) ? docTop : 0;
+        endY = Number.isFinite(docBottom) ? docBottom : startY;
         update();
       };
 
@@ -144,8 +147,10 @@
         ro.observe(content);
       }
 
-      // Initial measurement at load.
+      // Initial measurements.
       measure();
+      // Give layout a moment to stabilize.
+      window.requestAnimationFrame(() => measure());
       // Re-measure after all resources are loaded.
       window.addEventListener('load', () => measure());
     });
