@@ -5,22 +5,18 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (!window.mermaid) return;
-
     // Convert ```mermaid blocks (rendered as code.language-mermaid)
     // into <pre class="mermaid"> that Mermaid can render.
     document.querySelectorAll('code.language-mermaid').forEach((codeEl) => {
       const text = codeEl.textContent || '';
       const preEl = codeEl.closest('pre');
       if (preEl) preEl.classList.add('d-none');
-
       const mermaidPre = document.createElement('pre');
       mermaidPre.className = 'mermaid';
       mermaidPre.textContent = text;
-
       if (preEl && preEl.parentNode) preEl.parentNode.insertBefore(mermaidPre, preEl.nextSibling);
       else codeEl.parentNode.appendChild(mermaidPre);
     });
-
     try {
       mermaid.initialize({ startOnLoad: false });
       if (typeof mermaid.run === 'function') {
@@ -35,4 +31,89 @@
     }
   });
 </script>
+{% endif %}
+
+{%- comment -%}
+  Reading progress bar (Issue #16)
+{%- endcomment -%}
+
+{% if page.layout == 'post' %}
+  <style>
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      z-index: 2147483647;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    #reading-progress-bar {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background: #ff3b30;
+      opacity: 1;
+      transform-origin: left center;
+      will-change: width;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #reading-progress-bar {
+        transition: none;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.getElementById('reading-progress')) {
+        return;
+      }
+
+      const progress = document.createElement('div');
+      progress.id = 'reading-progress';
+      progress.setAttribute('aria-hidden', 'true');
+
+      const progressBar = document.createElement('div');
+      progressBar.id = 'reading-progress-bar';
+      progress.appendChild(progressBar);
+
+      document.body.prepend(progress);
+
+      let ticking = false;
+
+      function updateProgress() {
+        const scrollingElement = document.scrollingElement || document.documentElement;
+
+        const scrollTop = scrollingElement.scrollTop || window.scrollY || 0;
+        const scrollableHeight =
+          (scrollingElement.scrollHeight || 0) -
+          (scrollingElement.clientHeight || window.innerHeight || 0);
+
+        const percentage =
+          scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+
+        progressBar.style.width =
+          Math.min(100, Math.max(0, percentage)) + '%';
+
+        ticking = false;
+      }
+
+      function requestUpdate() {
+        if (ticking) {
+          return;
+        }
+        ticking = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+
+      updateProgress();
+    });
+  </script>
 {% endif %}
