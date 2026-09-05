@@ -1,9 +1,9 @@
 ---
-title: "How Three AI Models Helped Me Build a Reading Progress Bar"
+title: "How Hermes AI and Microsoft Copilot (GPT-5.6 Thinking) Helped Me Build a Reading Progress Bar for My Jekyll Chirpy Blog Posts"
 date: 2026-09-05 09:55:00 +0530
 categories: [AI, Web Development]
 tags: [jekyll, chirpy, javascript, css, ai-assisted-development, debugging, github-pages]
-description: "How Hermes AI, GPT-5.6 Thinking, GPT-5.4 Nano, and browser evidence helped me add a theme-aware reading progress bar to my Jekyll Chirpy blog."
+description: "How Hermes AI (using GPT-5.4 Nano), GPT-5.6 Thinking and browser evidence helped me add a theme-aware reading progress bar to my Jekyll Chirpy blog."
 image:
   path: /assets/images/ai-assisted-reading-progress-bar/reading-progress-bar.jpg
   alt: "Dark-mode Jekyll Chirpy blog post displaying a red reading progress bar across the top of the browser viewport"
