@@ -5,22 +5,18 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (!window.mermaid) return;
-
     // Convert ```mermaid blocks (rendered as code.language-mermaid)
     // into <pre class="mermaid"> that Mermaid can render.
     document.querySelectorAll('code.language-mermaid').forEach((codeEl) => {
       const text = codeEl.textContent || '';
       const preEl = codeEl.closest('pre');
       if (preEl) preEl.classList.add('d-none');
-
       const mermaidPre = document.createElement('pre');
       mermaidPre.className = 'mermaid';
       mermaidPre.textContent = text;
-
       if (preEl && preEl.parentNode) preEl.parentNode.insertBefore(mermaidPre, preEl.nextSibling);
       else codeEl.parentNode.appendChild(mermaidPre);
     });
-
     try {
       mermaid.initialize({ startOnLoad: false });
       if (typeof mermaid.run === 'function') {
@@ -39,8 +35,6 @@
 
 {%- comment -%}
   Reading progress bar (Issue #16)
-  - Injected only on blog post pages.
-  - Implemented with a single scroll listener throttled via requestAnimationFrame.
 {%- endcomment -%}
 
 {% if page.layout == 'post' %}
@@ -50,125 +44,76 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 12px;
+      height: 4px;
       z-index: 2147483647;
       pointer-events: none;
-      /* Force a visible color even if JS fails to run. */
-      background: #ff3b30 !important;
+      background: transparent;
     }
-    
+
     #reading-progress-bar {
-      width: 100%;
-      height: 100%;
       display: block;
-      transform: none;
-      width: 100%;
-      /* Force a visible color regardless of theme variables. */
-      background: #ff3b30 !important;
-      opacity: 1 !important;
+      width: 0%;
+      height: 100%;
+      background: #ff3b30;
+      opacity: 1;
+      transform-origin: left center;
       will-change: width;
     }
-    
+
     @media (prefers-reduced-motion: reduce) {
-      /* Keep bar updates functional (no transitions required). */
+      #reading-progress-bar {
+        transition: none;
+      }
     }
   </style>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Prevent duplicates if the page is restored/re-rendered.
-      if (document.getElementById('reading-progress')) return;
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.getElementById('reading-progress')) {
+        return;
+      }
 
-      const article = document.querySelector('article[data-toc]') || document.querySelector('article');
-      if (!article) return;
+      const progress = document.createElement('div');
+      progress.id = 'reading-progress';
+      progress.setAttribute('aria-hidden', 'true');
 
-      const content = article.querySelector(':scope > .content') || article.querySelector('.content');
-      if (!content) return;
+      const progressBar = document.createElement('div');
+      progressBar.id = 'reading-progress-bar';
+      progress.appendChild(progressBar);
 
-      const prefersReducedMotion = window.matchMedia
-        ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        : false;
+      document.body.prepend(progress);
 
-      // Chirpy can use the page scrolling element instead of always using window.
-      // Use the actual scrolling element when available.
-      const scrollingEl = document.scrollingElement || document.documentElement;
-
-      const bar = document.createElement('div');
-      bar.id = 'reading-progress';
-      bar.setAttribute('aria-hidden', 'true');
-
-      const barInner = document.createElement('div');
-      barInner.id = 'reading-progress-bar';
-      
-      bar.appendChild(barInner);
-
-      // Start with full width so we always have a visible bar.
-      // The JS update will clamp it to the correct progress.
-      barInner.style.width = '100%';
-      // Put it at the top of the document so it always stays above content.
-      document.body.prepend(bar);
-
-      let startY = 0;
-      let endY = 0;
       let ticking = false;
 
-      const measure = () => {
-        const rect = content.getBoundingClientRect();
-        const scrollTop = scrollingEl ? scrollingEl.scrollTop : window.scrollY;
-        const docTop = scrollTop + rect.top;
-        const docBottom = scrollTop + rect.bottom;
+      function updateProgress() {
+        const scrollingElement = document.scrollingElement || document.documentElement;
 
-        // Ensure we always have sane numbers.
-        startY = Number.isFinite(docTop) ? docTop : 0;
-        endY = Number.isFinite(docBottom) ? docBottom : startY;
-        update();
-      };
+        const scrollTop = scrollingElement.scrollTop || window.scrollY || 0;
+        const scrollableHeight =
+          (scrollingElement.scrollHeight || 0) -
+          (scrollingElement.clientHeight || window.innerHeight || 0);
 
-      const update = () => {
-        const total = endY - startY;
-        if (total <= 0) {
-          barInner.style.width = '100%';
+        const percentage =
+          scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+
+        progressBar.style.width =
+          Math.min(100, Math.max(0, percentage)) + '%';
+
+        ticking = false;
+      }
+
+      function requestUpdate() {
+        if (ticking) {
           return;
         }
-
-        // Progress increases as the bottom of the viewport moves through the article content.
-        const scrollTop = scrollingEl ? scrollingEl.scrollTop : window.scrollY;
-        const viewportBottom = scrollTop + window.innerHeight;
-        const progress = (viewportBottom - startY) / total;
-        const clamped = Math.min(1, Math.max(0, progress));
-        barInner.style.width = `${clamped * 100}%`;
-        ticking = false;
-      };
-
-      const requestUpdate = () => {
-        if (ticking) return;
         ticking = true;
-        window.requestAnimationFrame(update);
-      };
-
-      if (scrollingEl) {
-        scrollingEl.addEventListener('scroll', requestUpdate, { passive: true });
+        window.requestAnimationFrame(updateProgress);
       }
+
       window.addEventListener('scroll', requestUpdate, { passive: true });
-      window.addEventListener('resize', measure);
+      window.addEventListener('resize', requestUpdate);
 
-      // Respect reduced-motion preferences via CSS (we disable transitions).
-      // We still update the progress value on scroll so the bar remains functional.
-
-      if ('ResizeObserver' in window) {
-        const ro = new ResizeObserver(() => {
-          // Content height can change after lazy images / Mermaid render.
-          measure();
-        });
-        ro.observe(content);
-      }
-
-      // Initial measurements.
-      measure();
-      // Give layout a moment to stabilize.
-      window.requestAnimationFrame(() => measure());
-      // Re-measure after all resources are loaded.
-      window.addEventListener('load', () => measure());
+      updateProgress();
     });
   </script>
 {% endif %}
