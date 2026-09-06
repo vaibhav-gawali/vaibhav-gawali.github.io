@@ -1,0 +1,96 @@
+<!-- Analytics disclosure notice (Issue #21) -->
+<section
+  id="analytics-disclosure"
+  class="analytics-disclosure"
+  aria-labelledby="analytics-disclosure-title"
+  hidden
+>
+  <style>
+    /* Use Bootstrap/Chirpy theme variables via [data-bs-theme]. */
+    .analytics-disclosure {
+      position: fixed;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 2147483647;
+      background: var(--bs-body-bg, #fff);
+      color: var(--bs-body-color, #212529);
+      border: 1px solid var(--bs-border-color-translucent, rgba(0, 0, 0, 0.12));
+      border-radius: 0.9rem;
+      padding: 1rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      font-size: 0.95rem;
+    }
+
+    .analytics-disclosure a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .analytics-disclosure__actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .analytics-disclosure__actions .btn {
+      border-radius: 0.7rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .analytics-disclosure {
+        transition: none;
+      }
+    }
+  </style>
+
+  <h2 id="analytics-disclosure-title" class="h4 mb-1">Analytics notice</h2>
+
+  <p class="mb-2">
+    This website uses Google Analytics 4 to understand site usage and improve its content.
+    Analytics may process page visits, referral information, browser and device details, engagement
+    information, and approximate location.
+  </p>
+
+  <p class="mb-0">
+    By continuing to use this website, your visit may be measured by Google Analytics.
+    If you do not want your visit measured, please do not continue using the website.
+    You may also use browser privacy settings, tracking-protection features, content blockers, or
+    Google's Analytics opt-out browser add-on.
+  </p>
+
+  <div
+    class="analytics-disclosure__actions"
+    role="group"
+    aria-label="Analytics notice actions"
+  >
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="acknowledge-analytics-notice"
+      onclick="try{window.localStorage.setItem('analytics-notice-acknowledged','v1');}catch(e){};var n=document.getElementById('analytics-disclosure');if(!n)return; n.hidden=true; n.setAttribute('hidden',''); n.style.setProperty('display','none','important'); n.style.setProperty('opacity','0','important'); n.style.setProperty('pointer-events','none','important'); n.setAttribute('aria-hidden','true'); return false;"
+    >
+      Acknowledge and continue
+    </button>
+
+    <a
+      class="btn btn-outline-primary"
+      href="{{ '/privacy-policy/' | relative_url }}"
+    >
+      Read Privacy Policy
+    </a>
+  </div>
+</section>
+
+<!-- Storage-only toggle.
+     This relies on event attributes (not inline <script>) for reliability across
+     client-side navigations/theme JS. -->
+<img
+  alt=""
+  src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+  style="display:none"
+  onload="try{var v=localStorage.getItem('analytics-notice-acknowledged');var n=document.getElementById('analytics-disclosure');if(n){if(v==='v1'){n.hidden=true;n.setAttribute('hidden','');n.style.setProperty('display','none','important');n.style.setProperty('opacity','0','important');n.style.setProperty('pointer-events','none','important');n.setAttribute('aria-hidden','true');}else{n.hidden=false;n.removeAttribute('hidden');n.style.setProperty('display','block','important');n.style.setProperty('opacity','1','important');n.style.setProperty('pointer-events','auto','important');n.setAttribute('aria-hidden','false');}}}catch(e){}"
+  onerror="try{var v=localStorage.getItem('analytics-notice-acknowledged');var n=document.getElementById('analytics-disclosure');if(n){if(v==='v1'){n.hidden=true;n.setAttribute('hidden','');n.style.setProperty('display','none','important');n.style.setProperty('opacity','0','important');n.style.setProperty('pointer-events','none','important');n.setAttribute('aria-hidden','true');}else{n.hidden=false;n.removeAttribute('hidden');n.style.setProperty('display','block','important');n.style.setProperty('opacity','1','important');n.style.setProperty('pointer-events','auto','important');n.setAttribute('aria-hidden','false');}}}catch(e){}"
+/>
